@@ -23,9 +23,9 @@ namespace InterviewLearning.Repository
             return _db.users;
         }
 
-        public User loginUser(string email, string password)
+        public User loginUser(string email, string password) 
         {
-            var user = _db.users.FirstOrDefault(u => u.Email.ToLower() == email.ToLower() &&
+            var user = _db.users.FirstOrDefault(u => u.Email.ToLower() == email.ToLower() && 
                                                 u.Password.ToLower() == password.ToLower());
             return user;
         }

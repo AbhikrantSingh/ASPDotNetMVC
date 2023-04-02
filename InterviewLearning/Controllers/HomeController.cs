@@ -27,20 +27,14 @@ namespace InterviewLearning.Controllers
         [Route("user")]   
         public IEnumerable<User> GetAllUser()
         {
-            User u = new User()
-            {
-                UserId = 1,
-                UserName = "aaa",
-                Email = "Aaa@gmail.con",
-                Password = "213"
-            };
+           
             var user = new List<User>();
-            user.Add(u);
             IEnumerable<User> users = _userService.GetAllUser();
             return users;
         }
 
             [System.Web.Http.HttpPost]
+            [Authorize]
             [Route("login")]
             public User LoginUser(string email,string password)
             {

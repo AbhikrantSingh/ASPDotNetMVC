@@ -78,3 +78,15 @@ C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\obj\Debug\netc
 C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\obj\Debug\netcoreapp3.1\InterviewLearning.genruntimeconfig.cache
 C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.Owin.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.Jwt.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Amitesh\source\repos\InterviewLearning\InterviewLearning\bin\Debug\netcoreapp3.1\Owin.dll

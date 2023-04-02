@@ -32,9 +32,17 @@
       "InterviewLearning/1.0.0": {
         "dependencies": {
           "Microsoft.AspNet.WebApi.Core": "4.0.30506",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.32",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.32",
           "Microsoft.EntityFrameworkCore": "3.1.32",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.32",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.32",
+          "Microsoft.Extensions.Identity.Stores": "3.1.32",
+          "Microsoft.Owin.Host.SystemWeb": "3.1.0",
+          "Microsoft.Owin.Security": "3.1.0",
+          "Microsoft.Owin.Security.Jwt": "3.1.0",
+          "Microsoft.Owin.Security.OAuth": "3.1.0",
+          "System.IdentityModel.Tokens.Jwt": "5.5.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -51,8 +59,6 @@
           "Microsoft.AspNetCore.Connections.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.CookiePolicy": "3.1.0.0",
           "Microsoft.AspNetCore.Cors": "3.1.0.0",
-          "Microsoft.AspNetCore.Cryptography.Internal": "3.1.0.0",
-          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "3.1.0.0",
           "Microsoft.AspNetCore.DataProtection.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.DataProtection": "3.1.0.0",
           "Microsoft.AspNetCore.DataProtection.Extensions": "3.1.0.0",
@@ -131,8 +137,6 @@
           "Microsoft.Extensions.Hosting.Abstractions": "3.1.0.0",
           "Microsoft.Extensions.Hosting": "3.1.0.0",
           "Microsoft.Extensions.Http": "3.1.0.0",
-          "Microsoft.Extensions.Identity.Core": "3.1.0.0",
-          "Microsoft.Extensions.Identity.Stores": "3.1.0.0",
           "Microsoft.Extensions.Localization.Abstractions": "3.1.0.0",
           "Microsoft.Extensions.Localization": "3.1.0.0",
           "Microsoft.Extensions.Logging.Configuration": "3.1.0.0",
@@ -339,6 +343,60 @@
         },
         "compile": {
           "lib/net40/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.32": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "3.1.32.0",
+            "fileVersion": "3.100.3222.56610"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.Internal/3.1.32": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "assemblyVersion": "3.1.32.0",
+            "fileVersion": "3.100.3222.56610"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation/3.1.32": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "3.1.32"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "assemblyVersion": "3.1.32.0",
+            "fileVersion": "3.100.3222.56610"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/3.1.32": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "3.1.32",
+          "Microsoft.Extensions.Identity.Stores": "3.1.32"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "assemblyVersion": "3.1.32.0",
+            "fileVersion": "3.100.3222.56610"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -579,6 +637,38 @@
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
+      "Microsoft.Extensions.Identity.Core/3.1.32": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "3.1.32",
+          "Microsoft.Extensions.Logging": "3.1.32",
+          "Microsoft.Extensions.Options": "3.1.32"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Identity.Core.dll": {
+            "assemblyVersion": "3.1.32.0",
+            "fileVersion": "3.100.3222.56610"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Identity.Stores/3.1.32": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "3.1.32",
+          "Microsoft.Extensions.Identity.Core": "3.1.32",
+          "Microsoft.Extensions.Logging": "3.1.32"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Identity.Stores.dll": {
+            "assemblyVersion": "3.1.32.0",
+            "fileVersion": "3.100.3222.56610"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Identity.Stores.dll": {}
+        }
+      },
       "Microsoft.Extensions.Logging/3.1.32": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": "3.1.32",
@@ -727,6 +817,85 @@
       "Microsoft.Net.Http/2.0.20710": {},
       "Microsoft.NETCore.Platforms/2.0.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Owin/3.1.0": {
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.60405.82"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Host.SystemWeb/3.1.0": {
+        "dependencies": {
+          "Microsoft.Owin": "3.1.0",
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Host.SystemWeb.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.60405.82"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Host.SystemWeb.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security/3.1.0": {
+        "dependencies": {
+          "Microsoft.Owin": "3.1.0",
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.60405.82"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Jwt/3.1.0": {
+        "dependencies": {
+          "Microsoft.Owin": "3.1.0",
+          "Microsoft.Owin.Security": "3.1.0",
+          "Microsoft.Owin.Security.OAuth": "3.1.0",
+          "Owin": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "5.5.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.Jwt.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.60405.82"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.Jwt.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/3.1.0": {
+        "dependencies": {
+          "Microsoft.Owin": "3.1.0",
+          "Microsoft.Owin.Security": "3.1.0",
+          "Newtonsoft.Json": "10.0.1",
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.60405.82"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        }
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.5.0",
@@ -770,6 +939,17 @@
         },
         "compile": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Owin/1.0.0": {
+        "runtime": {
+          "lib/net40/Owin.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net40/Owin.dll": {}
         }
       },
       "runtime.native.System/4.3.0": {
@@ -1534,18 +1714,6 @@
         },
         "compileOnly": true
       },
-      "Microsoft.AspNetCore.Cryptography.Internal/3.1.0.0": {
-        "compile": {
-          "Microsoft.AspNetCore.Cryptography.Internal.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.AspNetCore.Cryptography.KeyDerivation/3.1.0.0": {
-        "compile": {
-          "Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.AspNetCore.DataProtection.Abstractions/3.1.0.0": {
         "compile": {
           "Microsoft.AspNetCore.DataProtection.Abstractions.dll": {}
@@ -2011,18 +2179,6 @@
       "Microsoft.Extensions.Http/3.1.0.0": {
         "compile": {
           "Microsoft.Extensions.Http.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Identity.Core/3.1.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Identity.Core.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.Identity.Stores/3.1.0.0": {
-        "compile": {
-          "Microsoft.Extensions.Identity.Stores.dll": {}
         },
         "compileOnly": true
       },
@@ -3074,6 +3230,34 @@
       "path": "microsoft.aspnet.webapi.core/4.0.30506",
       "hashPath": "microsoft.aspnet.webapi.core.4.0.30506.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.32": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tBnXyLLOm6VxJ51qXU2D7yzmcbXlLUh2YtTYFfNmGiznATcvO3d+e6Q0rRPFAKk92R6gP2JAu3FApM+6sfHjCQ==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.32",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.3.1.32.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cryptography.Internal/3.1.32": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tULjwFie6fYm4o6WfD+aHTTrps2I22MQVZpmEWaJumFmzZWA1nHsKezuCBl/u/iKiXtN3npL6MoINaiLHURr/A==",
+      "path": "microsoft.aspnetcore.cryptography.internal/3.1.32",
+      "hashPath": "microsoft.aspnetcore.cryptography.internal.3.1.32.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation/3.1.32": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ixua1omfsp1nvyAzk6MkAKnDIjpS1OM9RGqF+QnaOD7aC94U+seHhwpt/6ua/ualCUqa88Y1VFAbIImVb9yH9g==",
+      "path": "microsoft.aspnetcore.cryptography.keyderivation/3.1.32",
+      "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.3.1.32.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/3.1.32": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J4JrKulV9Ng/+y+YNqlVxJx4T/fmlSzAHg4rQYy/I+NfzBNJwzr/McHiwHNc0qsNIvGavRM60Spr77h/RuqP7g==",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/3.1.32",
+      "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.3.1.32.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
       "serviceable": true,
@@ -3200,6 +3384,20 @@
       "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.32",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.3.1.32.nupkg.sha512"
     },
+    "Microsoft.Extensions.Identity.Core/3.1.32": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g3uFWitGq4x8flEJVVL7grHf74CKCQkFZ8sgXLFcoBC7uFsBxlPULPEWnciF1rxgoKwe6RkAXsyy7HY6mST4ZA==",
+      "path": "microsoft.extensions.identity.core/3.1.32",
+      "hashPath": "microsoft.extensions.identity.core.3.1.32.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Identity.Stores/3.1.32": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y6NnFy7LyhBoN4PRtf2vawzLC4oOQNXxgP32tLH9QDG/0Opq5zihPlSaGUOkbu2DDuwd6zw0/jLB9yNa3CuGkA==",
+      "path": "microsoft.extensions.identity.stores/3.1.32",
+      "hashPath": "microsoft.extensions.identity.stores.3.1.32.nupkg.sha512"
+    },
     "Microsoft.Extensions.Logging/3.1.32": {
       "type": "package",
       "serviceable": true,
@@ -3291,6 +3489,41 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
+    "Microsoft.Owin/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dtDln3a84XlfPRyFNLfbqAxfoK5dFC7sH9E78KNZnRHXOEdelEBOczrUFkYG0h/+qfM7NlwBKEul5dZeVTY2gA==",
+      "path": "microsoft.owin/3.1.0",
+      "hashPath": "microsoft.owin.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Owin.Host.SystemWeb/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rh6kQcgnfNILpJSGZCbA8ANsdNiD+hDqQURrjR0f4Rp+820OcGLRRMGf9su9FHXCpXnWyNR33yuptslR/bdXmg==",
+      "path": "microsoft.owin.host.systemweb/3.1.0",
+      "hashPath": "microsoft.owin.host.systemweb.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2/5nPoucLtjyGgIQGKzb0vDLQhzwRz/8nPSHu6TpLdvOwB7uZKQRUwLKJY+mWODyyOK3a/CEeJoty/p5Va0kfg==",
+      "path": "microsoft.owin.security/3.1.0",
+      "hashPath": "microsoft.owin.security.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security.Jwt/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3DonhEZL1tWravz7vsPHJfCBc8jv+UrNF896IVRYwuuwRDNpngkazNMyOOxkGlRmBYNpehwSUrBygf6DU7RFDg==",
+      "path": "microsoft.owin.security.jwt/3.1.0",
+      "hashPath": "microsoft.owin.security.jwt.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security.OAuth/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oSBvSe/u/r9u2quLas/rpABHtzUGTz8wrjEotpEUkJXxJmxaC+B8XwmYtkDVE4FigtbcRiDdN2lKhkwBJIb/2Q==",
+      "path": "microsoft.owin.security.oauth/3.1.0",
+      "hashPath": "microsoft.owin.security.oauth.3.1.0.nupkg.sha512"
+    },
     "Microsoft.Win32.Registry/4.5.0": {
       "type": "package",
       "serviceable": true,
@@ -3304,6 +3537,13 @@
       "sha512": "sha512-MOUhQfeI43upq9QiEv+7YYTDQPtEZEj9xB50MgplO1XF/aumP0f+TCYIHpZEmfsiahJJaXt/gdRFYLFEoF2VyQ==",
       "path": "newtonsoft.json/10.0.1",
       "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
+    },
+    "Owin/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
+      "path": "owin/1.0.0",
+      "hashPath": "owin.1.0.0.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",
@@ -3861,16 +4101,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Cryptography.Internal/3.1.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.AspNetCore.Cryptography.KeyDerivation/3.1.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Microsoft.AspNetCore.DataProtection.Abstractions/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -4257,16 +4487,6 @@
       "sha512": ""
     },
     "Microsoft.Extensions.Http/3.1.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Identity.Core/3.1.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.Identity.Stores/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

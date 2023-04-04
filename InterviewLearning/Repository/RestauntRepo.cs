@@ -1,6 +1,7 @@
 using InterviewLearning.Data;
 using InterviewLearning.Models;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +26,14 @@ namespace InterviewLearning.Repository
 
         public IEnumerable<Restaunt> GetAllUserRestaunt(Guid userId)
         {
-            var user = _db.users.FirstOrDefault(u => u.UserId == userId);
-            var result = _db.restaunts.Where(res => res.userId == user.UserId);
-            return result;
+            //var user = _db.users.FirstOrDefault(u => u.UserId == userId);
+            //var result = _db.restaunts.Where(res => res.userId == user.UserId).ToList();
+            var res = _db.restaunts
+                      .Include(r => r.user)
+                      .Where(r => r.userId == userId)
+                      .ToList();
+
+            return res;
         }
 
         public string saveRestaunt(Guid userId, Restaunt restaunt)

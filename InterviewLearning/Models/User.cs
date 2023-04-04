@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace InterviewLearning.Models
@@ -18,7 +19,8 @@ namespace InterviewLearning.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public UserType UserType{ get; set; }
-        public ICollection<Restaunt> Restaunts { get; set; }
+        [IgnoreDataMember]
+        public virtual ICollection<Restaunt> Restaunts { get; set; }
 
     }
 }

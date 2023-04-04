@@ -1,4 +1,5 @@
 using InterviewLearning.Data;
+using InterviewLearning.Models;
 using InterviewLearning.Repository;
 using InterviewLearning.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,11 +12,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+
 
 namespace InterviewLearning
 {
@@ -50,7 +54,7 @@ namespace InterviewLearning
                                       .AllowAnyMethod(); ;
                                   });
             });
-
+            
             services.ConfigureApplicationCookie(opt =>
             {
                 opt.Events = new Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationEvents
@@ -63,6 +67,12 @@ namespace InterviewLearning
                 };
             });
 
+            services.AddControllersWithViews()
+            .AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
+           
             //services.AddAuthentication(option =>
             //{
             //    option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

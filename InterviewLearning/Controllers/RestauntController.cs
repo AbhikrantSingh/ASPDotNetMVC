@@ -2,6 +2,7 @@ using InterviewLearning.Models;
 using InterviewLearning.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -33,7 +34,9 @@ namespace InterviewLearning.Controllers
         [Route("{userId}")]
         public IEnumerable<Restaunt> GetAllUsetRestaunts(Guid userId)
         {
-            return restauntService.GetAllUserRestaunt(userId);
+            var res = restauntService.GetAllUserRestaunt(userId);
+            
+            return res;
         }
 
         [System.Web.Http.HttpPost]

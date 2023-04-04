@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace InterviewLearning.Models
@@ -18,9 +19,12 @@ namespace InterviewLearning.Models
         public string RestauntName { get; set; }
         public string ContactNumber { get; set; }
         public string Email { get; set; }
-        public List<Menu> Menu { get; set; }
+//        public List<Menu> Menu { get; set; }
         public Guid userId { get; set; }
-        public User user { get; set; }
+        //[ScriptIgnore]
+        [IgnoreDataMember]
+
+        public virtual User user { get; set; }
     
     }
 }

@@ -29,7 +29,6 @@ namespace InterviewLearning.Repository
             //var user = _db.users.FirstOrDefault(u => u.UserId == userId);
             //var result = _db.restaunts.Where(res => res.userId == user.UserId).ToList();
             var res = _db.restaunts
-                      .Include(r => r.user)
                       .Where(r => r.userId == userId)
                       .ToList();
 

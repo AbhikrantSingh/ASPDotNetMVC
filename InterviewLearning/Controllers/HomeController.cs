@@ -48,10 +48,10 @@ namespace InterviewLearning.Controllers
 
             [System.Web.Http.HttpPost]
             [Route("newUser")]
-            public ActionResult<string> SaveUser(User user)
+            public ActionResult<string> SaveUser(string userType,User user )
             {
                 if (user == null) return null;
-            
+            user.UserType = Enum.Parse<UserType>(userType);
                 return _userService.saveUser(user);
             }
     }

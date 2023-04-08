@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InterviewLearning.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230401200210_addConnectRestauntAndUsers")]
-    partial class addConnectRestauntAndUsers
+    [Migration("20230406172608_Added-Migration")]
+    partial class AddedMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,14 +36,14 @@ namespace InterviewLearning.Migrations
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("RestauntId")
+                    b.Property<Guid>("RestauntId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("RestauntId");
 
-                    b.ToTable("Menu");
+                    b.ToTable("menus");
                 });
 
             modelBuilder.Entity("InterviewLearning.Models.Restaunt", b =>
@@ -294,7 +294,9 @@ namespace InterviewLearning.Migrations
                 {
                     b.HasOne("InterviewLearning.Models.Restaunt", "Restaunt")
                         .WithMany("Menu")
-                        .HasForeignKey("RestauntId");
+                        .HasForeignKey("RestauntId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("InterviewLearning.Models.Restaunt", b =>

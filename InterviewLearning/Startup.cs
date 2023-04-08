@@ -96,6 +96,8 @@ namespace InterviewLearning
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IRestauntRepo, RestauntRepo>();
             services.AddScoped<IRestauntService, RestauntService>();
+            services.AddScoped<IMenuRepository, MenuRepository>();
+            services.AddScoped<IMenuService, MenuService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

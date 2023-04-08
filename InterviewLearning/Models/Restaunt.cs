@@ -19,7 +19,8 @@ namespace InterviewLearning.Models
         public string RestauntName { get; set; }
         public string ContactNumber { get; set; }
         public string Email { get; set; }
-//        public List<Menu> Menu { get; set; }
+        [IgnoreDataMember]
+        public List<Menu> Menu { get; set; }
         public Guid userId { get; set; }
         //[ScriptIgnore]
         [IgnoreDataMember]

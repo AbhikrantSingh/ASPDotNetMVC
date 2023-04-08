@@ -17,20 +17,24 @@ namespace InterviewLearning.Data
         public DbSet<User> users { get; set; }
         public DbSet<Restaunt> restaunts { get; set; }
 
+        public DbSet<Menu> menus { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.Entity<User>(b =>
-            //{
-            //    b.HasKey(l => l.UserId);
-            //    b.ToTable("users");
-            //});
+            
+            modelBuilder.Entity<Restaunt>()
+           .HasMany(r => r.Menu)
+           .WithOne(m => m.Restaunt)
+           .HasForeignKey(m => m.RestauntId)
+           .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Restaunts)
                 .WithOne(r => r.user)
-                .HasForeignKey(r => r.userId);
+                .HasForeignKey(r => r.userId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{

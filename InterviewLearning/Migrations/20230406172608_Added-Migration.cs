@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace InterviewLearning.Migrations
 {
-    public partial class addConnectRestauntAndUsers : Migration
+    public partial class AddedMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -189,24 +189,24 @@ namespace InterviewLearning.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Menu",
+                name: "menus",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
                     DishName = table.Column<string>(nullable: true),
                     DishPrice = table.Column<double>(nullable: false),
                     IsAvailable = table.Column<bool>(nullable: false),
-                    RestauntId = table.Column<Guid>(nullable: true)
+                    RestauntId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Menu", x => x.Id);
+                    table.PrimaryKey("PK_menus", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Menu_restaunts_RestauntId",
+                        name: "FK_menus_restaunts_RestauntId",
                         column: x => x.RestauntId,
                         principalTable: "restaunts",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -249,8 +249,8 @@ namespace InterviewLearning.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Menu_RestauntId",
-                table: "Menu",
+                name: "IX_menus_RestauntId",
+                table: "menus",
                 column: "RestauntId");
 
             migrationBuilder.CreateIndex(
@@ -277,7 +277,7 @@ namespace InterviewLearning.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Menu");
+                name: "menus");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
